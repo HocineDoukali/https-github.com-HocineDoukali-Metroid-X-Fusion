@@ -3,40 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon premier site</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Bulldozer - Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      color: #111;
+    }
+
+    header, section, footer {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header {
+      background-color: #fddede;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    header button {
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .value-prop {
+      background-color: #fff6d5;
+    }
+
+    .value-prop h2 {
+      margin-top: 0;
+    }
+
+    .logos img {
+      height: 30px;
+      margin: 10px;
+      opacity: 0.7;
+    }
+
+    .features {
+      background-color: #d5fdd8;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .feature {
+      width: 40%;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .personas {
+      background-color: #d5f7fd;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .persona {
+      background: white;
+      width: 30%;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .testimonials {
+      background-color: #d5ddfd;
+    }
+
+    .footer {
+      background-color: #fdd5eb;
+    }
+
+    button {
+      border: 2px solid #000;
+      padding: 8px 16px;
+      background: none;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 <body>
-
+  <!-- 1. Header / Bulldozer -->
   <header>
-    <h1>Bienvenue sur mon site !</h1>
-    <nav>
-      <a href="#accueil">Accueil</a> |
-      <a href="#a-propos">À propos</a> |
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Bulldozer</h1>
+    <button>Call-to-action</button>
   </header>
 
-  <main>
-    <section id="accueil">
-      <h2>Accueil</h2>
-      <p>Ceci est ma première page web en HTML !</p>
-    </section>
+  <!-- 2. Proposition de valeur -->
+  <section class="value-prop">
+    <h2>Proposition de valeur</h2>
+    <p>Complément de proposition de valeur</p>
+    <button>Call-to-benefit</button>
+    <div class="logos">
+      <img src="https://dummyimage.com/80x30/000/fff&text=aircall" alt="">
+      <img src="https://dummyimage.com/80x30/000/fff&text=vibe" alt="">
+      <img src="https://dummyimage.com/80x30/000/fff&text=alma" alt="">
+      <img src="https://dummyimage.com/80x30/000/fff&text=hexa" alt="">
+    </div>
+  </section>
 
-    <section id="a-propos">
-      <h2>À propos</h2>
-      <p>Je m'appelle Léa et j'apprends le développement web.</p>
-    </section>
+  <!-- 3. Logos de partenaires -->
+  <section style="background-color:#fffccf;">
+    <img src="https://dummyimage.com/80x30/000/fff&text=amenitiz" alt="">
+    <img src="https://dummyimage.com/80x30/000/fff&text=orus" alt="">
+    <img src="https://dummyimage.com/80x30/000/fff&text=sunology" alt="">
+    <img src="https://dummyimage.com/80x30/000/fff&text=otium" alt="">
+    <img src="https://dummyimage.com/80x30/000/fff&text=livestorm" alt="">
+  </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Envoyez-moi un message à <a href="mailto:doukali.hocine13@gmail.com">doukali.hocine13@gmail.com</a></p>
-    </section>
-  </main>
+  <!-- 4. Features -->
+  <section class="features">
+    <div class="feature">
+      <h3>Bénéfice/feature 1</h3>
+      <p>Compléments et détails bénéfice 1</p>
+      <button>Call-to-benefit</button>
+    </div>
+    <div class="feature">
+      <h3>Bénéfice/feature 2</h3>
+      <p>Compléments et détails bénéfice 2</p>
+      <button>Call-to-benefit</button>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 Mon site web</p>
+  <!-- 5. Offres personas -->
+  <section class="personas">
+    <div class="persona">
+      <h4>Offre Persona 1</h4>
+      <button>Call-to-action</button>
+    </div>
+    <div class="persona">
+      <h4>Offre Persona 2</h4>
+      <button>Call-to-action</button>
+    </div>
+    <div class="persona">
+      <h4>Offre Persona 3</h4>
+      <button>Call-to-action</button>
+    </div>
+  </section>
+
+  <!-- 6. Use case & témoignages -->
+  <section class="testimonials">
+    <h3>Use case & témoignages</h3>
+    <p>★★★★★</p>
+  </section>
+
+  <!-- 7. Proposition finale -->
+  <footer class="footer">
+    <h2>Proposition de valeur</h2>
+    <button>Call-to-benefit</button>
   </footer>
-
 </body>
 </html>
