@@ -4,152 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>METROID - Metroid X-Fusion Landing Page</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
-    body {
-      font-family: 'Press Start 2P', monospace;
-      background: radial-gradient(circle at center, #0a0f1a 0%, #01040a 100%);
-      color: #bfd0d0;
-      margin: 0;
-      padding: 0;
-      text-shadow: 0 0 6px #e0eaea;
-    }
-
-    header, section, footer {
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 2px solid rgba(0, 255, 255, 0.2);
-    }
-
-    header {
-      background: rgba(255, 0, 124, 0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      box-shadow: 0 0 20px #ff007c;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #ff007c;
-      text-shadow: 0 0 8px #ff007c;
-    }
-
-    header button {
-      background: #cedcdc;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 10px;
-      box-shadow: 0 0 15px #c2cdcd;
-      transition: all 0.3s ease;
-    }
-
-    header button:hover {
-      background: #ff007c;
-      color: #fff;
-      box-shadow: 0 0 25px #ff007c;
-    }
-
-    section.value-prop {
-      background: rgba(0, 255, 255, 0.05);
-    }
-
-    .value-prop h2 {
-      color: #c8d4d4;
-    }
-
-    .logos img {
-      height: 30px;
-      margin: 10px;
-      filter: brightness(0) invert(1);
-      opacity: 0.8;
-    }
-
-    section.partners {
-      background: rgba(255, 255, 0, 0.08);
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      border-top: 1px solid rgba(255, 255, 0, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 0, 0.3);
-    }
-
-    .features {
-      background: rgba(0, 255, 255, 0.08);
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .feature {
-      width: 40%;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid #00ffff;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    .personas {
-      background: rgba(255, 0, 124, 0.08);
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .persona {
-      width: 30%;
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid #ff007c;
-      box-shadow: 0 0 15px rgba(255, 0, 124, 0.4);
-      border-radius: 8px;
-      padding: 20px;
-    }
-
-    .testimonials {
-      background: rgba(0, 100, 255, 0.1);
-      color: #a0e0ff;
-      border-top: 1px solid rgba(0, 255, 255, 0.2);
-      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-    }
-
-    .footer {
-      background: rgba(255, 0, 124, 0.1);
-      text-shadow: 0 0 10px #ff007c;
-      padding-bottom: 80px;
-    }
-
-    button {
-      border: 2px solid #00ffff;
-      background: none;
-      color: #00ffff;
-      padding: 8px 16px;
-      font-size: 10px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
-    }
-
-    button:hover {
-      background: #00ffff;
-      color: #000;
-      box-shadow: 0 0 20px #00ffff;
-    }
-
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Metroid fusion</h1>
-    <button>Call-to-action</button>
+    <h1>Metroid Fusion</h1>
+    <div class="controls">
+      <button id="sound-btn">🔊 Activer le son</button>
+      <button id="access-btn">🗣️ Lecture audio</button>
+    </div>
   </header>
 
   <section class="value-prop">
@@ -209,5 +72,61 @@
     <h2>Rejoignez la mission</h2>
     <button>Call-to-benefit</button>
   </footer>
+
+  <audio id="bg-music" loop>
+    <source src="https://files.catbox.moe/gy0l5r.mp3" type="audio/mpeg">
+    <!-- Remplace le lien MP3 par ton propre fichier si tu veux -->
+  </audio>
+
+  <script>
+    // --- Contrôle du son ---
+    const soundBtn = document.getElementById('sound-btn');
+    const music = document.getElementById('bg-music');
+    let musicPlaying = false;
+
+    soundBtn.addEventListener('click', () => {
+      if (!musicPlaying) {
+        music.play();
+        soundBtn.textContent = "🔇 Couper le son";
+      } else {
+        music.pause();
+        soundBtn.textContent = "🔊 Activer le son";
+      }
+      musicPlaying = !musicPlaying;
+    });
+
+    // --- Accessibilité : Lecture audio ---
+    const accessBtn = document.getElementById('access-btn');
+
+    function getVoice() {
+      const voices = speechSynthesis.getVoices();
+      return voices.find(v => 
+        v.lang.startsWith('fr') && 
+        (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('hortense'))
+      ) || voices.find(v => v.lang.startsWith('fr')) || voices[0];
+    }
+
+    function speakText() {
+      const text = document.body.innerText;
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = "fr-FR";
+      speech.rate = 0.95;
+      speech.pitch = 0.9;
+      speech.volume = 1;
+
+      const selectedVoice = getVoice();
+      if (selectedVoice) speech.voice = selectedVoice;
+
+      speechSynthesis.cancel();
+      speechSynthesis.speak(speech);
+
+      document.body.classList.add("reading");
+      speech.onend = () => document.body.classList.remove("reading");
+    }
+
+    speechSynthesis.onvoiceschanged = () => {
+      accessBtn.addEventListener('click', speakText);
+    };
+  </script>
 </body>
 </html>
