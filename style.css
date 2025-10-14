@@ -1,28 +1,18 @@
+/* === Thème clair par défaut === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
   color: #333;
-  background: #f4f4f4;
   transition: all 0.6s ease;
 }
 
-/* ===== STRUCTURE ===== */
 header, section, footer {
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
 }
 
-/* Couleurs des sections selon l'image */
-#section1 { background: #ffd6d6; }
-#section2 { background: #fff; }
-#section3 { background: #fff9b0; }
-#section4 { background: #b6f2c6; }
-#section5 { background: #c6f2f2; }
-#section6 { background: #c6d6ff; }
-#section7 { background: #ffc6d6; }
-
-/* ===== CONTENU ===== */
 .controls {
   position: absolute;
   top: 20px;
@@ -32,57 +22,28 @@ header, section, footer {
 button {
   padding: 10px 20px;
   margin: 10px;
-  border: 2px solid #000;
-  background: white;
-  color: black;
+  border: none;
+  background-color: #007BFF;
+  color: white;
   cursor: pointer;
-  border-radius: 4px;
-  transition: 0.3s;
+  border-radius: 5px;
+  transition: 0.3s ease;
 }
 
 button:hover {
-  background: #000;
-  color: white;
+  background-color: #0056b3;
 }
 
-.logos img, .partners img {
-  margin: 10px;
-}
-
-.feature {
-  display: inline-block;
-  width: 45%;
-  margin: 10px;
-  background: white;
-  border-radius: 8px;
+.feature, .persona {
+  margin: 20px auto;
   padding: 20px;
-  vertical-align: top;
+  background-color: white;
+  border-radius: 5px;
+  max-width: 300px;
 }
 
-.img-placeholder {
-  width: 100%;
-  height: 120px;
-  background: #ddd;
-  border-radius: 6px;
-  margin-top: 10px;
-}
-
-.persona {
-  display: inline-block;
-  width: 28%;
-  margin: 10px;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-}
-
-.stars {
-  font-size: 24px;
-  color: gold;
-}
-
-footer h2 {
-  margin-bottom: 20px;
+.reading * {
+  outline: 2px solid #ff0;
 }
 
 /* === Thème Metroid Fusion === */
@@ -128,11 +89,6 @@ body.metroid-theme footer {
   background: rgba(255, 0, 124, 0.1);
   text-shadow: 0 0 10px #ff007c;
 }
-
 body.metroid-theme .reading * {
   outline: 2px solid #00ffff;
-}
-body.metroid-theme .reading .highlight {
-  background: rgba(0, 255, 255, 0.2);
-  box-shadow: 0 0 15px #00ffff;
 }
