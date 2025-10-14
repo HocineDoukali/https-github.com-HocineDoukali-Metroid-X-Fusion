@@ -17,11 +17,10 @@ header, section, footer {
 
 /* Couleurs des sections inspirées Metroid Fusion */
 #section1 { background: #7f1d1d; }  /* rouge sombre */
-#section2 { background: #4b1a4f; }  /* violet foncé */
-#section3 { background: #0a3f7f; }  /* bleu sombre */
-#section4 { background: #7f4f1a; }  /* jaune/orangé */
-#section5 { background: #9f1a4f; }  /* rose vif */
-#section6 { background: #1a7f7f; }  /* cyan sombre */
+#section2 { background: #0a3f7f; }  /* violet foncé */
+#section3 { background: #7f4f1a; }  /* jaune/orangé */
+#section4 { background: #9f1a4f; }  /* rose vif */
+#section5 { background: #1a7f7f; }  /* cyan sombre */
 #section7 { background: #5f1a7f; }  /* violet/mauve */
 
 /* ===== CONTENU ===== */
@@ -34,13 +33,13 @@ header, section, footer {
 button {
   padding: 10px 20px;
   margin: 10px;
-  border: 2px solid #00ffff; /* cyan néon */
+  border: 2px solid #7f1d1d; /* cyan néon */
   background: none;
-  color: #00ffff;
+  color: #7f1d1d;
   cursor: pointer;
   border-radius: 4px;
   text-transform: uppercase;
-  box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.4);
+  box-shadow: 0 0 15px rgb(99, 15, 15), 0 0 30px rgba(99, 15, 15, 0.5);
   transition: 0.3s;
   animation: neonPulse 2s infinite alternate;
 }
