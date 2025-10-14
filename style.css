@@ -17,7 +17,7 @@ header, section, footer {
 
 /* Couleurs des sections inspirées Metroid Fusion */
 #section1 { background: #7f1d1d; }  /* rouge sombre */
-#section2 { background: #0a3f7f; }  /* violet foncé */
+#section2 { background: #532ed8; }  /* violet foncé */
 #section3 { background: #7f4f1a; }  /* jaune/orangé */
 #section4 { background: #9f1a4f; }  /* rose vif */
 #section5 { background: #1a7f7f; }  /* cyan sombre */
@@ -39,15 +39,15 @@ button {
   cursor: pointer;
   border-radius: 4px;
   text-transform: uppercase;
-  box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.6);
+  box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.4);
   transition: 0.3s;
   animation: neonPulse 2s infinite alternate;
 }
 
 button:hover {
-  background: #b16617;
+  background: #532ed8;
   color: #0a0f1a;
-  box-shadow: 0 0 50px #8b1564, 0 0 100px #00ffff;
+  box-shadow: 0 0 50px #00ffff, 0 0 100px #00ffff;
 }
 
 .logos img, .partners img {
