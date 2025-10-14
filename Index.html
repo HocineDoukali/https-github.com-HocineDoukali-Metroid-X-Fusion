@@ -3,54 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metroid X-Fusion - Mode clair / sombre</title>
+  <title>Landing Page - Bulldozer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Metroid X-Fusion</h1>
+  <header id="section1">
+    <h1>Bulldozer</h1>
     <div class="controls">
       <button id="theme-toggle">🌓 Changer de thème</button>
       <button id="access-btn">🗣️ Lecture audio</button>
     </div>
+    <button class="cta">Call-to-action</button>
   </header>
 
-  <section class="value-prop">
+  <section id="section2" class="value-prop">
     <h2>Proposition de valeur</h2>
-    <p>Complément de proposition de valeur.</p>
+    <p>Complément de proposition de valeur</p>
     <button>Call-to-benefit</button>
-  </section>
-
-  <section class="features">
-    <div class="feature">
-      <h3>Feature 1</h3>
-      <p>Détails du bénéfice 1.</p>
-    </div>
-    <div class="feature">
-      <h3>Feature 2</h3>
-      <p>Détails du bénéfice 2.</p>
+    <div class="logos">
+      <img src="https://dummyimage.com/80x30/000/fff&text=aircall" alt="aircall">
+      <img src="https://dummyimage.com/80x30/000/fff&text=vibe.co" alt="vibe">
+      <img src="https://dummyimage.com/80x30/000/fff&text=alma" alt="alma">
+      <img src="https://dummyimage.com/80x30/000/fff&text=hexa" alt="hexa">
     </div>
   </section>
 
-  <section class="personas">
-    <div class="persona"><h4>Offre 1</h4></div>
-    <div class="persona"><h4>Offre 2</h4></div>
-    <div class="persona"><h4>Offre 3</h4></div>
+  <section id="section3" class="partners">
+    <img src="https://dummyimage.com/80x30/000/fff&text=amenitiz" alt="amenitiz">
+    <img src="https://dummyimage.com/80x30/000/fff&text=Orus" alt="orus">
+    <img src="https://dummyimage.com/80x30/000/fff&text=Sunology" alt="sunology">
+    <img src="https://dummyimage.com/80x30/000/fff&text=Otium" alt="otium">
+    <img src="https://dummyimage.com/80x30/000/fff&text=livestorm" alt="livestorm">
   </section>
 
-  <footer>
-    <h2>Rejoignez la mission</h2>
-    <button>Commencer</button>
+  <section id="section4" class="features">
+    <div class="feature">
+      <h3>Bénéfice/feature 1</h3>
+      <p>Compléments et détails bénéfice 1</p>
+      <button>Call-to-benefit</button>
+      <div class="img-placeholder"></div>
+    </div>
+    <div class="feature">
+      <h3>Bénéfice/feature 2</h3>
+      <p>Compléments et détails bénéfice 2</p>
+      <button>Call-to-benefit</button>
+      <div class="img-placeholder"></div>
+    </div>
+  </section>
+
+  <section id="section5" class="personas">
+    <div class="persona">
+      <h4>Offre Persona 1</h4>
+      <button>Call-to-action</button>
+    </div>
+    <div class="persona">
+      <h4>Offre Persona 2</h4>
+      <button>Call-to-action</button>
+    </div>
+    <div class="persona">
+      <h4>Offre Persona 3</h4>
+      <button>Call-to-action</button>
+    </div>
+  </section>
+
+  <section id="section6" class="testimonials">
+    <h3>Use case & témoignages</h3>
+    <div class="stars">★★★★★</div>
+    <div class="img-placeholder"></div>
+  </section>
+
+  <footer id="section7">
+    <h2>Proposition de valeur</h2>
+    <button>Call-to-benefit</button>
   </footer>
 
   <script>
-    // --- Basculer entre les thèmes ---
+    // --- Thème toggle ---
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('metroid-theme');
     });
 
-    // --- Accessibilité audio (lecture) ---
+    // --- Accessibilité audio ---
     const accessBtn = document.getElementById('access-btn');
     function speakText() {
       const elements = document.querySelectorAll('h1, h2, h3, h4, p, button');
@@ -78,38 +112,3 @@
   </script>
 </body>
 </html>
-    <style>
-        body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-        color: #333;
-        transition: background-color 0.3s, color 0.3s;
-        }
-        .metroid-theme {
-        background-color: #1a1a1a;
-        color: #f0f0f0;
-        }
-        header, section, footer {
-        padding: 20px;
-        text-align: center;
-        }
-        .controls {
-        margin-top: 10px;
-        }
-        button {
-        margin: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-        }
-        .reading {
-        outline: 2px solid #ff9800;
-        }
-        .feature, .persona {
-        border: 1px solid #ccc;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        }
-    </style>
