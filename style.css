@@ -21,7 +21,7 @@ header, section, footer {
 #section3 { background: #7f4f1a; }  /* jaune/orangé */
 #section4 { background: #9f1a4f; }  /* rose vif */
 #section5 { background: #1a7f7f; }  /* cyan sombre */
-#section7 { background: #5f1a7f; }  /* violet/mauve */
+#section6 { background: #5f1a7f; }  /* violet/mauve */
 
 /* ===== CONTENU ===== */
 .controls {
@@ -33,21 +33,21 @@ header, section, footer {
 button {
   padding: 10px 20px;
   margin: 10px;
-  border: 2px solid #7f1d1d; /* cyan néon */
+  border: 2px solid #00ffff; /* cyan néon */
   background: none;
-  color: #7f1d1d;
+  color: #00ffff;
   cursor: pointer;
   border-radius: 4px;
   text-transform: uppercase;
-  box-shadow: 0 0 15px rgb(99, 15, 15), 0 0 30px rgba(99, 15, 15, 0.5);
+  box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.6);
   transition: 0.3s;
   animation: neonPulse 2s infinite alternate;
 }
 
 button:hover {
-  background: #00ffff;
+  background: #b16617;
   color: #0a0f1a;
-  box-shadow: 0 0 50px #00ffff, 0 0 100px #00ffff;
+  box-shadow: 0 0 50px #8b1564, 0 0 100px #00ffff;
 }
 
 .logos img, .partners img {
