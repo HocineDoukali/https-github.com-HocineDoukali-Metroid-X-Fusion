@@ -3,72 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bulldozer - Landing Page</title>
+  <title>Bulldozer - Metroid Fusion Landing Page</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Press Start 2P', monospace;
+      background: radial-gradient(circle at center, #0a0f1a 0%, #01040a 100%);
+      color: #00ffff;
       margin: 0;
       padding: 0;
-      background-color: #fafafa;
-      color: #111;
+      text-shadow: 0 0 6px #00ffff;
     }
 
     header, section, footer {
       padding: 40px 20px;
       text-align: center;
+      border-bottom: 2px solid rgba(0, 255, 255, 0.2);
     }
 
     header {
-      background-color: #fddede;
+      background: rgba(255, 0, 124, 0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
+      box-shadow: 0 0 20px #ff007c;
     }
 
     header h1 {
       margin: 0;
+      color: #ff007c;
+      text-shadow: 0 0 8px #ff007c;
     }
 
     header button {
-      background: #000;
-      color: #fff;
+      background: #00ffff;
+      color: #000;
       border: none;
       padding: 10px 20px;
       cursor: pointer;
+      font-size: 10px;
+      box-shadow: 0 0 15px #00ffff;
+      transition: all 0.3s ease;
     }
 
-    .value-prop {
-      background-color: #fff6d5;
+    header button:hover {
+      background: #ff007c;
+      color: #fff;
+      box-shadow: 0 0 25px #ff007c;
+    }
+
+    section.value-prop {
+      background: rgba(0, 255, 255, 0.05);
     }
 
     .value-prop h2 {
-      margin-top: 0;
+      color: #00ffff;
     }
 
     .logos img {
       height: 30px;
       margin: 10px;
-      opacity: 0.7;
+      filter: brightness(0) invert(1);
+      opacity: 0.8;
+    }
+
+    section.partners {
+      background: rgba(255, 255, 0, 0.08);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      border-top: 1px solid rgba(255, 255, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 0, 0.3);
     }
 
     .features {
-      background-color: #d5fdd8;
+      background: rgba(0, 255, 255, 0.08);
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
     }
 
     .feature {
       width: 40%;
-      background: white;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid #00ffff;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .personas {
-      background-color: #d5f7fd;
+      background: rgba(255, 0, 124, 0.08);
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
@@ -76,59 +105,73 @@
     }
 
     .persona {
-      background: white;
       width: 30%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #ff007c;
+      box-shadow: 0 0 15px rgba(255, 0, 124, 0.4);
+      border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .testimonials {
-      background-color: #d5ddfd;
+      background: rgba(0, 100, 255, 0.1);
+      color: #a0e0ff;
+      border-top: 1px solid rgba(0, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     }
 
     .footer {
-      background-color: #fdd5eb;
+      background: rgba(255, 0, 124, 0.1);
+      text-shadow: 0 0 10px #ff007c;
+      padding-bottom: 80px;
     }
 
     button {
-      border: 2px solid #000;
-      padding: 8px 16px;
+      border: 2px solid #00ffff;
       background: none;
+      color: #00ffff;
+      padding: 8px 16px;
+      font-size: 10px;
+      text-transform: uppercase;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+
+    button:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
     }
 
   </style>
 </head>
 <body>
-  <!-- 1. Header / Bulldozer -->
   <header>
     <h1>Bulldozer</h1>
     <button>Call-to-action</button>
   </header>
 
-  <!-- 2. Proposition de valeur -->
   <section class="value-prop">
     <h2>Proposition de valeur</h2>
     <p>Complément de proposition de valeur</p>
     <button>Call-to-benefit</button>
     <div class="logos">
-      <img src="https://dummyimage.com/80x30/000/fff&text=aircall" alt="">
-      <img src="https://dummyimage.com/80x30/000/fff&text=vibe" alt="">
-      <img src="https://dummyimage.com/80x30/000/fff&text=alma" alt="">
-      <img src="https://dummyimage.com/80x30/000/fff&text=hexa" alt="">
+      <img src="https://dummyimage.com/100x30/00ffff/000&text=aircall" alt="aircall">
+      <img src="https://dummyimage.com/100x30/00ffff/000&text=vibe" alt="vibe">
+      <img src="https://dummyimage.com/100x30/00ffff/000&text=alma" alt="alma">
+      <img src="https://dummyimage.com/100x30/00ffff/000&text=hexa" alt="hexa">
     </div>
   </section>
 
-  <!-- 3. Logos de partenaires -->
-  <section style="background-color:#fffccf;">
-    <img src="https://dummyimage.com/80x30/000/fff&text=amenitiz" alt="">
-    <img src="https://dummyimage.com/80x30/000/fff&text=orus" alt="">
-    <img src="https://dummyimage.com/80x30/000/fff&text=sunology" alt="">
-    <img src="https://dummyimage.com/80x30/000/fff&text=otium" alt="">
-    <img src="https://dummyimage.com/80x30/000/fff&text=livestorm" alt="">
+  <section class="partners">
+    <img src="https://dummyimage.com/100x30/ffff00/000&text=amenitiz" alt="amenitiz">
+    <img src="https://dummyimage.com/100x30/ffff00/000&text=orus" alt="orus">
+    <img src="https://dummyimage.com/100x30/ffff00/000&text=sunology" alt="sunology">
+    <img src="https://dummyimage.com/100x30/ffff00/000&text=otium" alt="otium">
+    <img src="https://dummyimage.com/100x30/ffff00/000&text=livestorm" alt="livestorm">
   </section>
 
-  <!-- 4. Features -->
   <section class="features">
     <div class="feature">
       <h3>Bénéfice/feature 1</h3>
@@ -142,7 +185,6 @@
     </div>
   </section>
 
-  <!-- 5. Offres personas -->
   <section class="personas">
     <div class="persona">
       <h4>Offre Persona 1</h4>
@@ -158,15 +200,13 @@
     </div>
   </section>
 
-  <!-- 6. Use case & témoignages -->
   <section class="testimonials">
     <h3>Use case & témoignages</h3>
-    <p>★★★★★</p>
+    <p>★★★★★ — "Un système plus rapide que la Power Suit elle-même !"</p>
   </section>
 
-  <!-- 7. Proposition finale -->
   <footer class="footer">
-    <h2>Proposition de valeur</h2>
+    <h2>Rejoignez la mission</h2>
     <button>Call-to-benefit</button>
   </footer>
 </body>
