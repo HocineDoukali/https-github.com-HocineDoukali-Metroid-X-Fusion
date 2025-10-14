@@ -1,18 +1,29 @@
-/* === Thème clair par défaut === */
+/* ===== BASE ===== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  color: #c8d4d4;
+  background: #0a0f1a;
   transition: all 0.6s ease;
 }
 
+/* ===== STRUCTURE ===== */
 header, section, footer {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
+/* Couleurs des sections */
+#section1 { background: #111620; }
+#section2 { background: #121926; }
+#section3 { background: #1a1f34; }
+#section4 { background: #17242d; }
+#section5 { background: #1e2a36; }
+#section6 { background: #1c2230; }
+#section7 { background: #211c28; }
+
+/* ===== CONTENU ===== */
 .controls {
   position: absolute;
   top: 20px;
@@ -22,28 +33,69 @@ header, section, footer {
 button {
   padding: 10px 20px;
   margin: 10px;
-  border: none;
-  background-color: #007BFF;
-  color: white;
+  border: 2px solid #00ffff;
+  background: none;
+  color: #00ffff;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s ease;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+  transition: 0.3s;
+  animation: neonPulse 2s infinite alternate;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: #00ffff;
+  color: #0a0f1a;
+  box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
 }
 
-.feature, .persona {
-  margin: 20px auto;
+.logos img, .partners img {
+  margin: 10px;
+}
+
+.feature {
+  display: inline-block;
+  width: 45%;
+  margin: 10px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
   padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  max-width: 300px;
+  vertical-align: top;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  animation: neonPulse 3s infinite alternate;
 }
 
-.reading * {
-  outline: 2px solid #ff0;
+.img-placeholder {
+  width: 100%;
+  height: 120px;
+  background: #222633;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.persona {
+  display: inline-block;
+  width: 28%;
+  margin: 10px;
+  padding: 20px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 8px;
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  animation: neonPulse 3s infinite alternate;
+}
+
+.stars {
+  font-size: 24px;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+footer h2 {
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px #00ffff;
 }
 
 /* === Thème Metroid Fusion === */
@@ -54,41 +106,52 @@ body.metroid-theme {
 
 body.metroid-theme header {
   background: rgba(255, 0, 124, 0.1);
-  box-shadow: 0 0 20px #ff007c;
+  box-shadow: 0 0 20px #ff007c, 0 0 40px #ff007c;
+  animation: neonPulseHeader 4s infinite alternate;
 }
 
 body.metroid-theme h1, 
 body.metroid-theme h2, 
 body.metroid-theme h3 {
   color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-}
-
-body.metroid-theme button {
-  background: none;
-  border: 2px solid #00ffff;
-  color: #00ffff;
-  text-transform: uppercase;
-  box-shadow: 0 0 10px rgba(0,255,255,0.3);
-}
-
-body.metroid-theme button:hover {
-  background: #00ffff;
-  color: #000;
-  box-shadow: 0 0 25px #00ffff;
-}
-
-body.metroid-theme .feature, 
-body.metroid-theme .persona {
-  background: rgba(0, 0, 0, 0.4);
-  border: 1px solid #00ffff;
-  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  animation: neonPulseText 2.5s infinite alternate;
 }
 
 body.metroid-theme footer {
   background: rgba(255, 0, 124, 0.1);
-  text-shadow: 0 0 10px #ff007c;
+  text-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c;
+  animation: neonPulseHeader 4s infinite alternate;
 }
+
 body.metroid-theme .reading * {
   outline: 2px solid #00ffff;
+}
+
+/* ===== ANIMATIONS NÉON ===== */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(0,255,255,0.3), 0 0 10px rgba(0,255,255,0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(0,255,255,0.7), 0 0 40px rgba(0,255,255,0.7);
+  }
+}
+
+@keyframes neonPulseHeader {
+  0% {
+    box-shadow: 0 0 10px #ff007c, 0 0 20px #ff007c;
+  }
+  100% {
+    box-shadow: 0 0 30px #ff007c, 0 0 60px #ff007c;
+  }
+}
+
+@keyframes neonPulseText {
+  0% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  }
 }
