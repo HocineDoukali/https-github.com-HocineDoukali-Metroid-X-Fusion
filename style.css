@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* ---------- Fond animé radar ---------- */
+body {
+  font-family: 'Press Start 2P', monospace;
+  background: radial-gradient(circle at center, #0a0f1a 0%, #01040a 100%);
+  color: #c8d4d4;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,255,255,0.05) 0px, transparent 2px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(0,255,255,0.05) 0px, transparent 2px, transparent 40px);
+  animation: scannerMove 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes scannerMove {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 0 40px, 40px 0; }
+}
+
+/* ---------- Apparition fluide ---------- */
+header, section, footer {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInSlide 1s ease forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Header ---------- */
+header {
+  background: rgba(255, 0, 124, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: 0 0 20px #ff007c;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+header h1 {
+  color: #ff007c;
+  text-shadow: 0 0 8px #ff007c;
+  animation: neonPulsePink 2s infinite alternate;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* ---------- Neon Animations ---------- */
+@keyframes neonPulsePink {
+  from { text-shadow: 0 0 6px #ff007c; }
+  to { text-shadow: 0 0 18px #ff00ff; }
+}
+
+@keyframes neonPulseCyan {
+  from { box-shadow: 0 0 10px rgba(0,255,255,0.3); }
+  to { box-shadow: 0 0 25px rgba(0,255,255,0.9); }
+}
+
+/* ---------- Boutons ---------- */
+button {
+  border: 2px solid #00ffff;
+  background: none;
+  color: #00ffff;
+  padding: 8px 16px;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,255,255,0.4);
+  animation: neonPulseCyan 3s infinite alternate;
+}
+
+button:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 25px #00ffff;
+}
+
+/* ---------- Sections ---------- */
+section.value-prop { background: rgba(0, 255, 255, 0.05); }
+
+.logos img {
+  height: 30px;
+  margin: 10px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+section.partners {
+  background: rgba(255, 255, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 0, 0.3);
+}
+
+.features {
+  background: rgba(0, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.feature {
+  width: 40%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.personas {
+  background: rgba(255, 0, 124, 0.08);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.persona {
+  width: 30%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #ff007c;
+  box-shadow: 0 0 15px rgba(255, 0, 124, 0.4);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.testimonials {
+  background: rgba(0, 100, 255, 0.1);
+  color: #a0e0ff;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.footer {
+  background: rgba(255, 0, 124, 0.1);
+  text-shadow: 0 0 10px #ff007c;
+  padding-bottom: 80px;
+  animation: neonPulsePink 2s infinite alternate;
+}
+
+/* --- Effet de lecture audio --- */
+body.reading {
+  animation: pulseReading 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseReading {
+  from { box-shadow: inset 0 0 40px rgba(0,255,255,0.2); }
+  to { box-shadow: inset 0 0 80px rgba(255,0,124,0.4); }
+}
