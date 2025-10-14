@@ -3,130 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>METROID - Metroid X-Fusion Landing Page</title>
+  <title>Metroid X-Fusion - Mode clair / sombre</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Metroid Fusion</h1>
+    <h1>Metroid X-Fusion</h1>
     <div class="controls">
-      <button id="sound-btn">🔊 Activer le son</button>
+      <button id="theme-toggle">🌓 Changer de thème</button>
       <button id="access-btn">🗣️ Lecture audio</button>
     </div>
   </header>
 
   <section class="value-prop">
     <h2>Proposition de valeur</h2>
-    <p>Complément de proposition de valeur</p>
+    <p>Complément de proposition de valeur.</p>
     <button>Call-to-benefit</button>
-    <div class="logos">
-      <img src="https://dummyimage.com/100x30/00ffff/000&text=aircall" alt="aircall">
-      <img src="https://dummyimage.com/100x30/00ffff/000&text=vibe" alt="vibe">
-      <img src="https://dummyimage.com/100x30/00ffff/000&text=alma" alt="alma">
-      <img src="https://dummyimage.com/100x30/00ffff/000&text=hexa" alt="hexa">
-    </div>
-  </section>
-
-  <section class="partners">
-    <img src="https://dummyimage.com/100x30/ffff00/000&text=amenitiz" alt="amenitiz">
-    <img src="https://dummyimage.com/100x30/ffff00/000&text=orus" alt="orus">
-    <img src="https://dummyimage.com/100x30/ffff00/000&text=sunology" alt="sunology">
-    <img src="https://dummyimage.com/100x30/ffff00/000&text=otium" alt="otium">
-    <img src="https://dummyimage.com/100x30/ffff00/000&text=livestorm" alt="livestorm">
   </section>
 
   <section class="features">
     <div class="feature">
-      <h3>Bénéfice/feature 1</h3>
-      <p>Compléments et détails bénéfice 1</p>
-      <button>Call-to-benefit</button>
+      <h3>Feature 1</h3>
+      <p>Détails du bénéfice 1.</p>
     </div>
     <div class="feature">
-      <h3>Bénéfice/feature 2</h3>
-      <p>Compléments et détails bénéfice 2</p>
-      <button>Call-to-benefit</button>
+      <h3>Feature 2</h3>
+      <p>Détails du bénéfice 2.</p>
     </div>
   </section>
 
   <section class="personas">
-    <div class="persona">
-      <h4>Offre Persona 1</h4>
-      <button>Call-to-action</button>
-    </div>
-    <div class="persona">
-      <h4>Offre Persona 2</h4>
-      <button>Call-to-action</button>
-    </div>
-    <div class="persona">
-      <h4>Offre Persona 3</h4>
-      <button>Call-to-action</button>
-    </div>
+    <div class="persona"><h4>Offre 1</h4></div>
+    <div class="persona"><h4>Offre 2</h4></div>
+    <div class="persona"><h4>Offre 3</h4></div>
   </section>
 
-  <section class="testimonials">
-    <h3>Use case & témoignages</h3>
-    <p>★★★★★ — "Un système plus rapide que la Power Suit elle-même !"</p>
-  </section>
-
-  <footer class="footer">
+  <footer>
     <h2>Rejoignez la mission</h2>
-    <button>Call-to-benefit</button>
+    <button>Commencer</button>
   </footer>
 
-  <audio id="bg-music" loop>
-    <source src="https://files.catbox.moe/gy0l5r.mp3" type="audio/mpeg">
-    <!-- Remplace le lien MP3 par ton propre fichier si tu veux -->
-  </audio>
-
   <script>
-    // --- Contrôle du son ---
-    const soundBtn = document.getElementById('sound-btn');
-    const music = document.getElementById('bg-music');
-    let musicPlaying = false;
-
-    soundBtn.addEventListener('click', () => {
-      if (!musicPlaying) {
-        music.play();
-        soundBtn.textContent = "🔇 Couper le son";
-      } else {
-        music.pause();
-        soundBtn.textContent = "🔊 Activer le son";
-      }
-      musicPlaying = !musicPlaying;
+    // --- Basculer entre les thèmes ---
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('metroid-theme');
     });
 
-    // --- Accessibilité : Lecture audio ---
+    // --- Accessibilité audio (lecture) ---
     const accessBtn = document.getElementById('access-btn');
-
-    function getVoice() {
-      const voices = speechSynthesis.getVoices();
-      return voices.find(v => 
-        v.lang.startsWith('fr') && 
-        (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('google') || v.name.toLowerCase().includes('hortense'))
-      ) || voices.find(v => v.lang.startsWith('fr')) || voices[0];
-    }
-
     function speakText() {
-      const text = document.body.innerText;
-      const speech = new SpeechSynthesisUtterance(text);
-      speech.lang = "fr-FR";
-      speech.rate = 0.95;
-      speech.pitch = 0.9;
-      speech.volume = 1;
-
-      const selectedVoice = getVoice();
-      if (selectedVoice) speech.voice = selectedVoice;
-
+      const elements = document.querySelectorAll('h1, h2, h3, h4, p, button');
       speechSynthesis.cancel();
-      speechSynthesis.speak(speech);
-
-      document.body.classList.add("reading");
-      speech.onend = () => document.body.classList.remove("reading");
+      document.body.classList.add('reading');
+      const voice = speechSynthesis.getVoices().find(v => v.lang.startsWith('fr')) || null;
+      let delay = 0;
+      elements.forEach(el => {
+        const text = el.innerText.trim();
+        if (text) {
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'fr-FR';
+          utterance.rate = 0.9;
+          utterance.pitch = 1.05;
+          utterance.voice = voice;
+          setTimeout(() => speechSynthesis.speak(utterance), delay);
+          delay += text.split(' ').length * 300;
+        }
+      });
+      setTimeout(() => document.body.classList.remove('reading'), delay + 1000);
     }
-
     speechSynthesis.onvoiceschanged = () => {
       accessBtn.addEventListener('click', speakText);
     };
   </script>
 </body>
 </html>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+        }
+        .metroid-theme {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+        }
+        header, section, footer {
+        padding: 20px;
+        text-align: center;
+        }
+        .controls {
+        margin-top: 10px;
+        }
+        button {
+        margin: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        }
+        .reading {
+        outline: 2px solid #ff9800;
+        }
+        .feature, .persona {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        }
+    </style>
