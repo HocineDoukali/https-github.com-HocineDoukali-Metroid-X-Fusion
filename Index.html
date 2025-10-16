@@ -7,83 +7,251 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ===== SECTION 1 : En-tête avec titre et commandes ===== -->
   <header id="section1">
     <h1>Metroid Fusion remake</h1>
+
+    <!-- Boutons de contrôle du thème et de la lecture audio -->
     <div class="controls">
       <button id="theme-toggle">🌓 Changer de thème</button>
       <button id="access-btn">🗣️ Lecture audio</button>
     </div>
+
     <p>Le remake du célèbre jeu Metroid Fusion</p>
     <p>Démo de 2 semaines</p>
     <button>Démo</button> 
   </header>
 
+  <!-- ===== SECTION 2 : Informations Nintendo ===== -->
   <section id="section2" class="value-prop">
     <h2>Nintendo</h2>
     <p>Bienvenue bientôt en vente le 26/11/25</p>
     <button>Boutique Nintendo</button>
+
+    <!-- Ligne d’images principales -->
     <div class="logos">
-      <img src="https://dummyimage.com/80x30/000/fff&text=aircall" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=vibe.co" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=alma" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=hexa" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=amenitiz" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=Orus" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=Sunology" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=Otium" alt="image">
-      <img src="https://dummyimage.com/80x30/000/fff&text=livestorm" alt="image">
+      <img class="img1" src="metroid_fusion.jpg" alt="image de metroid_fusion">
+      <img class="img2" src="Metroid F.jpg" alt="image de Metroid F">
+      <img class="img3" src="Samus.jpg" alt="image de Samus">
+      <img class="img4" src="Remake de Metroid Fusion_ Édition Collector.png" alt="image Remake de Metroid Fusion Édition Collector">
     </div>
   </section>
 
+  <!-- ===== SECTION 4 : Types de jeux ===== -->
   <section id="section4" class="features">
     <div class="feature">
-      <h3>Metroid Fusion remake</h3>
-      <p>jeux simples</p>
-      <button>vente 40€</button>
-      <div class="img-placeholder"></div>
+      <div class="persona3">
+        <h3>Metroid Fusion remake</h3>
+        <p>Jeu simple</p>
+        <img class="img5" src="Jacket.jpeg" alt="image de Jacket">
+        <button>Vente 40€</button>
+      </div>
     </div>
+
     <div class="feature">
-      <h3>Metroid Fusion remake</h3>
-      <p>jeux Deluxe </p>
-      <button>vente 80€</button>
-      <div class="img-placeholder"></div>
+      <div class="persona3">
+        <h3>Metroid Fusion remake</h3>
+        <p>Jeu Deluxe</p>
+        <img class="img6" src="Deluxe.png" alt="image de Deluxe">
+        <button>Vente 80€</button>
+      </div>
     </div>
   </section>
 
-  <section id="section5" class="personas">
-    <div class="persona">
+ <!-- ===== SECTION 5 : Boîtes mystères ===== -->
+<section id="section5" class="personas">
+  <div class="persona">
+    <div class="persona3">
       <h4>Petite boîte mystère</h4>
-      <button>vente 20€</button>
+      <img class="img9" src="boitemetroid.jpg" alt="image de petite boîte mystère">
+      <button>Vente 20€</button>
     </div>
-    <div class="persona">
-      <h4>grande boîte mystère</h4>
-      <button>vente 30€</button>
-    </div>
-    <div class="persona">
-      <h4>mega boîte mystère</h4>
-      <button>vente 50€</button>
-    </div>
-  </section>
+  </div>
 
-  <section id="section6" class="testimonials">
-    <h3>Commentaire de vente et de livraison</h3>
-    <div class="stars">★★★★★</div>
-    <div class="img-placeholder"></div>
-  </section>
+  <div class="persona">
+    <div class="persona3">
+      <h4>Grande boîte mystère</h4>
+      <img class="img9" src="boitemetroid.jpg" alt="image de grande boîte mystère">
+      <button>Vente 30€</button>
+    </div>
+  </div>
 
+  <div class="persona">
+    <div class="persona3">
+      <h4>Méga boîte mystère</h4>
+      <img class="img9" src="boitemetroid.jpg" alt="image de méga boîte mystère">
+      <button>Vente 50€</button>
+    </div>
+  </div>
+</section>
+
+
+ <!-- ===== SECTION 6 : Avis clients avec vote néon ===== -->
+<section id="section6" class="testimonials">
+  <h3>Commentaires de vente et de livraison</h3>
+  
+  <!-- Zone pour écrire un commentaire -->
+  <div class="comment-section">
+    <label for="user-comment">Écrire un commentaire :</label>
+    <textarea id="user-comment" rows="3" placeholder="Votre avis..."></textarea>
+    <button id="submit-comment">Publier</button>
+  </div>
+
+  <!-- Zone où les commentaires seront affichés -->
+  <div id="display-comments"></div>
+</section>
+
+<style>
+  /* Styles pour la section commentaires */
+  #section6 .comment-section {
+    margin: 20px 0;
+  }
+
+  #section6 textarea {
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #00ffff;
+    border-radius: 6px;
+    background: #0a0f1a;
+    color: #c8d4d4;
+    resize: none;
+    box-shadow: 0 0 10px #00ffff;
+  }
+
+  #section6 button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: 2px solid #00ffff;
+    background: none;
+    color: #00ffff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,255,255,0.6), 0 0 30px rgba(0,255,255,0.4);
+    transition: 0.3s;
+  }
+
+  #section6 button:hover {
+    background: #f7f704;
+    color: #121f39;
+    box-shadow: 0 0 50px #00ffff, 0 0 100px #00ffff;
+  }
+
+  #display-comments .comment-block {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    color: #c8d4d4;
+    text-shadow: 0 0 10px #00ffff;
+  }
+
+  /* Styles étoiles vote néon */
+  .stars {
+    color: #444; /* gris neutre par défaut */
+    cursor: pointer;
+    font-size: 22px;
+    display: inline-block;
+    user-select: none;
+    transition: all 0.2s ease;
+  }
+
+  .stars span:hover,
+  .stars span.hover,
+  .stars span.selected {
+    color: #ffd700;
+    text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700, 0 0 60px #ffd700;
+    transform: scale(1.3);
+  }
+
+  .vote-count {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #00ffff;
+    vertical-align: middle;
+  }
+</style>
+
+<script>
+  const submitBtn = document.getElementById('submit-comment');
+  const commentInput = document.getElementById('user-comment');
+  const displayDiv = document.getElementById('display-comments');
+
+  submitBtn.addEventListener('click', () => {
+    const text = commentInput.value.trim();
+    if (!text) return;
+
+    // Crée un bloc commentaire
+    const commentBlock = document.createElement('div');
+    commentBlock.classList.add('comment-block');
+
+    // Ajoute le texte, les étoiles et le compteur
+    commentBlock.innerHTML = `
+      <p>💬 ${text}</p>
+      <div class="stars-container">
+        <div class="stars">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+        <div class="vote-count">0/5</div>
+      </div>
+    `;
+
+    displayDiv.prepend(commentBlock);
+
+    const stars = commentBlock.querySelectorAll('.stars span');
+    const voteCount = commentBlock.querySelector('.vote-count');
+
+    // Effet hover et sélection
+    stars.forEach((star, idx) => {
+      // Hover dynamique
+      star.addEventListener('mouseover', () => {
+        stars.forEach((s, i) => {
+          if(i <= idx) s.classList.add('hover');
+          else s.classList.remove('hover');
+        });
+      });
+      star.addEventListener('mouseout', () => {
+        stars.forEach(s => s.classList.remove('hover'));
+      });
+
+      // Sélection
+      star.addEventListener('click', () => {
+        stars.forEach(s => s.classList.remove('selected'));
+        for(let i = 0; i <= idx; i++){
+          stars[i].classList.add('selected');
+        }
+        voteCount.textContent = `${idx+1}/5`;
+      });
+    });
+
+    // Réinitialiser la zone de saisie
+    commentInput.value = '';
+  });
+</script>
+
+
+  <!-- ===== PIED DE PAGE ===== -->
   <footer id="section7">
-    <h2>mail:Nintendo.européenne@gmail.com téléphone:08.60.84.24.34</h2>
+    <h2>mail: Nintendo.européenne@gmail.com — téléphone: 08.60.84.24.34</h2>
     <button>Google</button>
   </footer>
 
+  <!-- ===== SCRIPT : Fonctions du site ===== -->
   <script>
-    // --- Thème toggle ---
+    // --- Bouton pour changer le thème ---
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('metroid-theme');
     });
 
-    // --- Accessibilité audio ---
+    // --- Bouton pour lancer la lecture audio de tout le texte ---
     const accessBtn = document.getElementById('access-btn');
     function speakText() {
       const elements = document.querySelectorAll('h1, h2, h3, h4, p, button');
@@ -91,6 +259,7 @@
       document.body.classList.add('reading');
       const voice = speechSynthesis.getVoices().find(v => v.lang.startsWith('fr')) || null;
       let delay = 0;
+
       elements.forEach(el => {
         const text = el.innerText.trim();
         if (text) {
@@ -105,9 +274,22 @@
       });
       setTimeout(() => document.body.classList.remove('reading'), delay + 1000);
     }
+
     speechSynthesis.onvoiceschanged = () => {
       accessBtn.addEventListener('click', speakText);
     };
+
+    // --- Lecture vocale au survol d’un bouton ---
+    const boutons = document.querySelectorAll('button');
+    boutons.forEach(bouton => {
+      bouton.addEventListener('mouseover', () => {
+        const utter = new SpeechSynthesisUtterance(bouton.innerText);
+        utter.lang = 'fr-FR';
+        utter.rate = 0.95;
+        speechSynthesis.cancel(); // stoppe toute autre voix
+        speechSynthesis.speak(utter);
+      });
+    });
   </script>
 </body>
 </html>
