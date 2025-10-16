@@ -15,13 +15,63 @@ header, section, footer {
   position: relative;
 }
 
-/* Couleurs des sections inspirées Metroid Fusion */
-#section1 { background: #7f1d1d; }  /* rouge sombre */
-#section2 { background: #532ed8; }  /* violet foncé */
-#section3 { background: #7f4f1a; }  /* jaune/orangé */
-#section4 { background: #9f1a4f; }  /* rose vif */
-#section5 { background: #1a7f7f; }  /* cyan sombre */
-#section6 { background: #5f1a7f; }  /* violet/mauve */
+/* ===== COULEURS DES SECTIONS ET NEONS ===== */
+
+/* Section 1 : rouge sombre */
+#section1 { 
+  background: #7f1d1d;  /* fond rouge sombre */
+  box-shadow: 0 0 30px #7f1d1d, 0 0 60px rgba(127,29,29,0.5); /* néon autour du bloc */
+}
+
+/* Section 2 : violet foncé */
+#section2 { 
+  background: #532ed8; 
+  box-shadow: 0 0 30px #532ed8, 0 0 60px rgba(83,46,216,0.5);
+}
+
+/* Section 3 : jaune/orangé */
+#section3 { 
+  background: #7f4f1a; 
+  box-shadow: 0 0 30px #7f4f1a, 0 0 60px rgba(127,79,26,0.5);
+}
+
+/* Section 4 : rose vif */
+#section4 { 
+  background: #9f1a4f; 
+  box-shadow: 0 0 30px #9f1a4f, 0 0 60px rgba(159,26,79,0.5);
+}
+
+/* Section 5 : cyan sombre */
+#section5 { 
+  background: #1a7f7f; 
+  box-shadow: 0 0 30px #1a7f7f, 0 0 60px rgba(26,127,127,0.5);
+}
+
+/* Section 6 : violet/mauve */
+#section6 { 
+  background: #5f1a7f; 
+  box-shadow: 0 0 30px #5f1a7f, 0 0 60px rgba(95,26,127,0.5);
+}
+
+/* ===== NEONS POUR LES BLOCS PERSONA ===== */
+#section1 .persona { 
+  box-shadow: 0 0 25px #7f1d1d, 0 0 50px rgba(127,29,29,0.5); 
+}
+#section2 .persona { 
+  box-shadow: 0 0 25px #532ed8, 0 0 50px rgba(83,46,216,0.5); 
+}
+#section3 .persona { 
+  box-shadow: 0 0 25px #7f4f1a, 0 0 50px rgba(127,79,26,0.5); 
+}
+#section4 .persona { 
+  box-shadow: 0 0 25px #9f1a4f, 0 0 50px rgba(159,26,79,0.5); 
+}
+#section5 .persona { 
+  box-shadow: 0 0 25px #1a7f7f, 0 0 50px rgba(26,127,127,0.5); 
+}
+#section6 .persona { 
+  box-shadow: 0 0 25px #5f1a7f, 0 0 50px rgba(95,26,127,0.5); 
+}
 
 /* ===== CONTENU ===== */
 .controls {
@@ -43,7 +93,22 @@ button {
   transition: 0.3s;
   animation: neonPulse 2s infinite alternate;
 }
-
+.img1 {
+  width: 400pxS;
+  height: 400px;
+}
+.img2 {
+  width: 400px;
+  height: 400px;
+}
+.img3 {
+  width: 400pxS;
+  height: 400px;
+}
+.img4 {
+  width: 400px;
+  height: 400px;
+}
 button:hover {
   background: #f7f704;
   color: #121f39;
@@ -66,7 +131,14 @@ button:hover {
   box-shadow: 0 0 25px rgba(0,255,255,0.6), 0 0 50px rgba(0,255,255,0.3);
   animation: neonPulse 3s infinite alternate;
 }
-
+.img5 {
+  width: 400pxS;
+  height: 400px;
+}
+.img6 {
+  width: 400px;
+  height: 400px;
+}
 .img-placeholder {
   width: 100%;
   height: 120px;
@@ -80,7 +152,7 @@ button:hover {
   width: 28%;
   margin: 10px;
   padding: 20px;
-  background: rgba(226, 7, 7, 0.4);
+  background: rgb(4, 135, 242);
   border-radius: 8px;
   border: 1px solid #00ffff;
   box-shadow: 0 0 25px rgba(0,255,255,0.6), 0 0 50px rgba(0,255,255,0.3);
@@ -117,7 +189,23 @@ body.metroid-theme h3 {
   text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 70px #00ffff;
   animation: neonPulseText 2.5s infinite alternate;
 }
-
+.img9 {
+  width: 200px;
+  height: 200px;
+}
+.img9 {
+  width: 200px;
+  height: 200px;
+}
+.img9 {
+  width: 200px;
+  height: 200px;
+}
+.persona3 {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
 body.metroid-theme footer {
   background: rgba(255, 0, 124, 0.2);
   text-shadow: 0 0 20px #ff007c, 0 0 40px #ff007c, 0 0 70px #ff007c;
